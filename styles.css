@@ -34,132 +34,161 @@ box-sizing: border-box;
 
 
 
-.card-container{
-    display: flex;  
-    width: 1440px;
+main{
+  display: flex;
+    min-width: 1440px;
+    
     font-family: "Space Grotesk", sans-serif;
     font-weight: 500;
     height: 100vh;
-    background: url(./images/bg-main-desktop.png);
-    background-repeat: no-repeat;  
-    background-position: left;
-    /*background-color: black;*/   
-    justify-content: center;
-    align-items: center;  
     font-size: 18px;
-}
-.container{
-    display: flex;
-    width: 1200px;
-    gap: 180px;
-}
-.left{
-    display: flex;
-    flex-direction: column;
+    background-image: url(./images/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-position-y: 200px;
+   
 
-
+    
 }
-.front{
+
+.card{
     display: flex;
     flex-direction: column;
     color: white;
- text-transform: uppercase;
- letter-spacing: 1.8px;   
- margin-bottom: 20px;
+    justify-content: center;
  
-  
-}
-.card-content{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    padding: 30px; 
+ 
+
+   
+    
 }
 .logo{
-width: 80px;
-margin-bottom: 55px;
-}
-.number{
-   font-weight: 500;
-   font-size: 30px;
-   letter-spacing: 3.9px;
-   margin-bottom: 40px;  
-}
-.hero{
-    display: flex;
-    justify-content: space-between;
-}
-
-.back{
-    display: flex;
+    width: 60px;
     position: relative;
-    left: 110px;
-    color: white;
-    letter-spacing: 3.9px;
+    bottom: 130px;
+    left: 230px;
 }
-
 .eg-cvc{
     position: relative;
-    right: 100px;
-    top: 110px;
+    left: 575px;
+    bottom: 140px;
+    letter-spacing: 1.5px;
+    font-size: 13px;
 }
-.right
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  
-  
+.number{
+    position: relative;
+    bottom: 70px;
+    left: 230px;
+   font-weight: 500;
+   font-size: 20px;
+   letter-spacing: 4.9px;
+}
+.customer{
+    position: relative;
+    bottom: 50px;
+    left: 230px;
+    font-size: 13px;
+    letter-spacing: 1.9px;
+   
+}
+.date{
+    position: relative;
+    bottom: 65px;
+    left: 530px; 
+    font-size: 13px;
+    letter-spacing: 1.9px;
+}
+.card-front{
+    width: 400px;
+    margin-left: 200px;
+    position: relative;
+    top: 55px;
+    box-shadow: 10px 10px 90px black;
+   
+}
+
+.card-back{
+    width: 400px;
+    margin-left: 260px;
+    position: relative;
+    bottom: 20px;
+
+border-radius: 10px;
+    box-shadow: 10px 10px 200px black;
+    
+    
+}
+
+
+
+
+.card-detail{
+display: flex;
+
+
 }
 form{
     display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 500px 150px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+ 
+}
+article{
+    display: flex;
     flex-direction: column;
-    padding: 30px;
-    font-size: 14px;
-    gap: 10px; 
+    padding-bottom: 40px;
+}
+heading{
+    display: flex;
+    gap: 22px;
+}
+sub{
+    display: flex;
+    gap: 0px;
 }
 
-.cardholder-name{
+.customer-name{
 padding: 10px;
 border-radius: 10px;
-padding-right: 170px;
 margin-bottom: 20px;
 cursor: pointer; 
 }
 .card-number{
 padding: 10px;
 border-radius: 10px;
-padding-right: 170px;
 cursor: pointer;
+margin-bottom: 20px;
 }
-.exp-month{
+label{
+margin-bottom: 5px;
+}
+.month{
     width: 70px;
     padding: 10px;
     cursor: pointer;
-    padding-right: 15px;
+    padding-right: 12px;
     border-radius: 10px;
+    margin-right: 8px;
 }
-.exp-year{
+.year{
     width: 70px;
     padding: 10px;
-    padding-right: 15px;
+    padding-right: 12px;
     border-radius: 10px;
     cursor: pointer;
 }
-.cvc-part{
-    
-    margin-left: 18px;
-}
-.card-cvc{
+
+.cvc{
     padding: 10px;
+    margin-left: 20px;
     border-radius: 10px;
     cursor: pointer;
 }
-.date-container{
-    display: flex;
-    font-weight: 500;
-    text-transform: uppercase;
-}
+
 
 .submit-btn{
     padding: 13px;
@@ -168,8 +197,46 @@ cursor: pointer;
     color: white;
     background: hsl(278, 68%, 11%);
     cursor: pointer;
+    letter-spacing: 1.2px;
 }
 
-.card-namr-error, .card-number-error, .card-month-error, .card-year-error, .card-cvc-error{
-    color: hsl(0, 100%, 66%);
+.valid{
+    display: none;
 }
+    .invalid{
+    color: red;
+    display: block;
+    }
+
+    .error{
+        color: red;
+        
+    }
+
+
+    .hidden{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 0px 100px ;
+        gap: 20px;
+        padding: 30px;
+        border: 2px solid black;
+      position:relative ;
+      right: 400px;
+      transform-origin: center;
+      transition: ease-in-out;
+      transition-duration: 20ms;
+      visibility:hidden;
+
+    }
+    .next{
+        padding: 10px 100px;
+        background-color: rgb(31, 25, 61);
+        color: white;
+        border-radius: 50px;
+        cursor: pointer;
+
+
+    }
